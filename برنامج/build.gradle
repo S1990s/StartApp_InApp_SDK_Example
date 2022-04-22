@@ -1,0 +1,88 @@
+apply plugin: 'com.android.application'
+repositories {
+  maven { url 'https://startappdev.bintray.com/maven' }-keep class com.startapp.** {
+      *;
+}
+
+-keep class com.truenet.** {
+      *;
+}
+
+-keepattributes Exceptions, InnerClasses, Signature, Deprecated, SourceFile,
+LineNumberTable, *Annotation*, EnclosingMethod
+-dontwarn android.webkit.JavascriptInterface
+-dontwarn com.startapp.**
+
+-dontwarn org.jetbrains.annotations.**
+}
+
+dependencies {StartAppSDK.init(this, "StartApp App ID", true);
+  implementation 'com.startapp:inapp-sdk:4.9.+'
+}
+<provider android:name="com.startapp.sdk.adsbase.StartAppInitProvider" android:authorities="${applicationId}.startappinitprovider" tools:node="remove" />
+android {StartAppSDK.setUserConsent (this,  
+                            "pas",
+                            System.currentTimeMillis(),                        
+                            true);StartAppSDK.getExtras(this)  
+      .edit()
+      .putString("IABUSPrivacy_String", "1YNN")
+      .apply(); StartAppSDK.init(this, "StartApp App ID", false);
+    compileSdkVersion 'android-S'
+<uses-permission android:name="android.permission.BLUETOOTH" />@Override
+public void onBackPressed() {
+    StartAppAd.onBackPressed(this);
+    super.onBackPressed();StartAppAd.setAutoInterstitialPreferences(
+                  new AutoInterstitialPreferences()
+                  .setSecondsBetweenAds(60)
+           );StartAppAd.setAutoInterstitialPreferences(
+                  new AutoInterstitialPreferences()
+                  .setActivitiesBetweenAds(3)
+         <com.startapp.sdk.ads.banner.Mrec android:id="@+id/startAppMrec" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" />  );<com.startapp.sdk.ads.banner.Banner android:id="@+id/startAppBanner" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" />
+}// Get the Main relative layout of the entire activity
+RelativeLayout mainLayout = (RelativeLayout)findViewById(R.id.mainLayout);
+
+// Define StartApp Mrec
+Mrec startAppMrec = new Mrec(this);
+RelativeLayout.LayoutParams mrecParameters =
+            new RelativeLayout.LayoutParams(
+                        RelativeLayout.LayoutParams.WRAP_CONTENT,
+                        RelativeLayout.LayoutParams.WRAP_CONTENT);
+mrecParameters.addRule(RelativeLayout.CENTER_HORIZONTAL);
+mrecParameters.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+
+// Add to main Layout
+mainLayout.addView(startAppMrec, mrecParameters);
+    defaultConfig {public void btnOpenActivity (View view){
+    Intent nextActivity = new Intent(this, NextActivity.class);
+    startActivity(nextActivity);
+    StartAppAd.showAd(this);<com.startapp.sdk.ads.banner.Cover android:id="@+id/startAppCover" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" />
+}// Get the Main relative layout of the entire activity
+RelativeLayout mainLayout = (RelativeLayout)findViewById(R.id.mainLayout);
+
+// Define StartApp Cover
+Cover startAppCover = new Cover(this);startAppAd.loadAd(AdMode.REWARDED_VIDEO);
+RelativeLayout.LayoutParams coverParameters =
+            new RelativeLayout.LayoutParams(
+                        RelativeLayout.LayoutParams.WRAP_CONTENT,
+                        RelativeLayout.LayoutParams.WRAP_CONTENT);
+coverParameters.addRule(RelativeLayout.CENTER_HORIZONTAL);
+coverParameters.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+
+// Add to main Layout
+mainLayout.addView(startAppCover, coverParameters);
+        minSdkVersion 19
+        targetSdkVersion 31<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" tools:node="remove"/>
+
+        applicationId 'com.example.app'xmlns:tools="http://schemas.android.com/tools"
+    }
+}
+
+dependencies {
+    // noinspection GradleDynamicVersion
+    implementation 'com.startapp:inapp-sdk:4.8.+'
+
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.recyclerview:recyclerview:1.2.0'
+}
