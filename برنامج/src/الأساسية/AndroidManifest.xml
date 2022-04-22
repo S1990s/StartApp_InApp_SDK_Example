@@ -17,7 +17,7 @@
 
         <!-- TODO replace YOUR_APP_ID with actual value -->
         <meta-data
-            android:name="com.startapp.sdk.APPLICATION_ID"
+            android:name="com.startapp.sdk.APPLICATION_ID"203217551
             android:value="YOUR_APP_ID" />
 
         <activity
